@@ -247,9 +247,16 @@ class SimpleRobotControl:
             (m.x_goal - m.x) * (m.x_goal - m.x) + (m.y_goal - m.y) * (m.y_goal - m.y)
         )
 
-        # TODO
-        local_speed = 10
-        local_turn = 5
+        # TODO  
+
+
+        local_speed =  distance
+        local_speed = local_speed - distance
+        
+        #if m.x_goal == 0:
+        local_turn = 0
+        #else:
+            #local_turn = math.tan(m.y_goal/m.x_goal)
 
         m1_speed, m2_speed = m.ik(local_speed, local_turn)
         m.m1.speed = m1_speed
