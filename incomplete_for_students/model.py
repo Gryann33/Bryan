@@ -41,8 +41,6 @@ class Model(object):
 
     def ik(self, linear_speed, rotational_speed):
 
-        
-
         """Given the linear speed and the rotational speed, 
         returns the speed of the wheels in a differential wheeled robot
         
@@ -83,12 +81,12 @@ class Model(object):
         # Going from wheel speeds to robot speed
         linear_speed, rotation_speed = self.dk()
 
-        dx = linear_speed * dt
+        dp = linear_speed * dt
         dtheta = rotation_speed * dt
 
 
         # Updating the robot position
-        self.x = self.x + dx * math.cos(self.theta)
-        self.y = self.y + dx * math.sin(self.theta)
+        self.x = self.x + dp * math.cos(self.theta)
+        self.y = self.y + dp * math.sin(self.theta)
         self.theta = self.theta + dtheta  
 

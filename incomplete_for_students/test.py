@@ -32,7 +32,7 @@ print("\nlinear_speed = {}\nrotational_speed = {}".format(linear_speed, rotation
 print("\n######TEST FONCTION DK######")
 
 print("\nparametre ")
-linear_speed = 1
-rotational_speed = 0
-m.m1.speed, m.m2.speed = m.dk()
-print("\nMOTEUR 1 = {}\nMOTEUR 2 = {}".format(m.m2.speed, m.m2.speed))
+linear_speed = 10
+rotational_speed = 5
+m.ik(linear_speed,rotational_speed)
+print("\nMOTEUR 1 = {}\nMOTEUR 2 = {}".format(m.m1.speed, m.m2.speed))
